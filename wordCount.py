@@ -40,8 +40,8 @@ def main():
     for word in words:
         word_count[word] = word_count.get(word, 0) + 1
     
-    # Sort by count (descending), then alphabetically for ties
-    sorted_words = sorted(word_count.items(), key=lambda x: (-x[1], x[0]))
+    # Sort alphabetically by word
+    sorted_words = sorted(word_count.items(), key=lambda x: x[0])
     
     # Open output file for writing (create/truncate)
     fd_out = os.open(outputFileName, os.O_WRONLY | os.O_CREAT | os.O_TRUNC, 0o644)
